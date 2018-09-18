@@ -1,4 +1,4 @@
-import distanceInWords from "date-fns/distance_in_words";
+import distanceInWordsStrict from "date-fns/distance_in_words_strict";
 import { Random } from "./utils";
 
 const time = document.querySelector(".countdown .time") as HTMLDivElement;
@@ -12,8 +12,8 @@ const random = seed => new Random(seed).next();
 
 const render = (c, now) => {
   time.style.color = c;
-  time.innerText = distanceInWords(now, estimated, {
-    includeSeconds: true
+  time.innerText = distanceInWordsStrict(now, estimated, {
+    unit: "d"
   });
 };
 
