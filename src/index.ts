@@ -3,6 +3,7 @@ import { Random } from "./utils";
 
 const time = document.querySelector(".countdown .time") as HTMLDivElement;
 
+const estimated = new Date(2023, 0, 1); // I will update it as soon as Elon give me more info
 const INTERVAL = 1879.69219;
 const start = new Date(new Date().getFullYear(), 0, 1, 0, 0, 0, 0).getTime();
 const color = rnd =>
@@ -11,7 +12,7 @@ const random = seed => new Random(seed).next();
 
 const render = (c, now) => {
   time.style.color = c;
-  time.innerText = distanceInWords(now, new Date(2023, 0, 1), {
+  time.innerText = distanceInWords(now, estimated, {
     includeSeconds: true
   });
 };

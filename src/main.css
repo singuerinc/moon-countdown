@@ -47,8 +47,6 @@ body {
 .info {
   text-align: center;
   text-decoration: none;
-  position: absolute;
-  width: 100vw;
   padding: 0.5rem 0.75rem;
   background-color: rgba(255, 255, 255, 0);
   color: rgba(255, 255, 255, 0.6);
