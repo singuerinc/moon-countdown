@@ -1,12 +1,9 @@
-function Random(seed) {
-  this._seed = seed % 2147483647;
-  if (this._seed <= 0) this._seed += 2147483646;
-}
-
-Random.prototype.next = function() {
-  return (this._seed = (this._seed * 16807) % 2147483647);
-};
-
-export {
-  Random
+export function random(seed) {
+  let _seed = seed % 2147483647;
+  if (_seed <= 0) _seed += 2147483646;
+  return {
+    next() {
+      return (_seed = (_seed * 16807) % 2147483647);
+    }
+  };
 }
